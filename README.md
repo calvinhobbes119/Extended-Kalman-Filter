@@ -25,6 +25,4 @@ The next two videos shows the performance of the EKF when only LiDAR or RADAR me
 
 [![Only RADAR data is available](https://github.com/calvinhobbes119/Extended-Kalman-Filter/blob/master/Untitled.png)](https://youtu.be/T0g1Duec7bw)
 
-Future improvements
----
-I plan to experiment using more data from the challenge track so the car successfully completes the challenge course as well. Currently the car makes it way through roughly 10% of the challenge course before veering off track. The training and validation losses are still fairly high after 20 epochs of training, indicating that the network weights have not yet converged. I am currently testing by increasing the number of epochs as well as collecting more data on the challenge track.
+As an experiment, I changed the code to study the performance when the timesteps between the measurements is only significantly higher than the dataset we have. As expected, the EKF continues to extrapolate the position linearly based on the last available update step leading to drift, and corrects itself whenever new measurement data becomes available.
